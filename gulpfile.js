@@ -178,7 +178,7 @@ gulp.task("build", function (done) {
 });
 
 //  browser-sync
-gulp.task("browser-sync", function (done) {
+gulp.task("bs", function (done) {
 	browserSync.init({
 		notify: false,
 		files: [bs.files],
@@ -208,7 +208,7 @@ gulp.task("start", gulp.series("clean", "copy"));
 
 gulp.task("release", gulp.series("release"));
 
-gulp.task("dev:default", gulp.series(parallel("browser-sync", "build"), "bs-reload", "dev:watch"));
+gulp.task("dev:default", gulp.series(parallel("bsc", "build"), "bs-reload", "dev:watch"));
 
 gulp.task("pro:default", gulp.series(parallel("build"), "minify"));
 
