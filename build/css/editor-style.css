@@ -1,0 +1,302 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none; }
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth; }
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block; }
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/
+html {
+  font-size: 62.5%; }
+
+html:focus-within {
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "mplus-1m", "Roboto", sans-serif;
+  font-size: 1.6rem;
+  color: #707070;
+  background-color: #fffdfa; }
+
+h4,
+h5,
+h6 {
+  margin: 0; }
+
+ul, ol {
+  margin: 0;
+  -webkit-padding-start: 0px;
+  padding-inline-start: 0px; }
+
+img {
+  vertical-align: bottom; }
+
+a {
+  cursor: pointer;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s; }
+  a:hover {
+    opacity: 0.7; }
+
+table {
+  border-collapse: collapse; }
+
+button,
+label,
+input,
+textarea {
+  border: none;
+  outline: none; }
+
+button {
+  cursor: pointer;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+textarea {
+  resize: none; }
+
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/
+@font-face {
+  font-family: "mplus-1m";
+  src: url("../../font/mplus-1m-bold.ttf") format("truetype"), url("../../font/mplus-1m-regular.ttf") format("truetype");
+  font-display: swap; }
+
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/
+body {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+header {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+main {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+article {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+section {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+aside {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+footer {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+h1 {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+h2 {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+h3 {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+h4 {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+p {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+div {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+ul {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+li {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+a {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+img {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+i {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+span {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+strong {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+big {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+small {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+em {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+ol {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+dl {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+dt {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+dd {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+table {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+tr {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+th {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+td {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+form {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+input {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+textarea {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+select {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+option {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+button {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+figure {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+figcaption {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+label {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+svg {
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+.dbg1 {
+  color: black;
+  background: rgba(255, 99, 71, 0.5);
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+.dbg2 {
+  color: black;
+  background: rgba(135, 206, 235, 0.5);
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+.dbg3 {
+  color: black;
+  background: rgba(144, 238, 144, 0.5);
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+.dbg4 {
+  color: black;
+  background: rgba(210, 180, 140, 0.5);
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+.dbg5 {
+  color: black;
+  background: rgba(255, 182, 193, 0.5);
+  outline: 0.5px solid rgba(0, 0, 0, 0.5); }
+
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/
+.wp-caption,
+.wp-caption-text,
+.sticky,
+.gallery-caption,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter.screen-reader-text {
+  margin: 0; }
+
+/************************************************************************/
+/*  END OF FILE                                       									*/
+/************************************************************************/

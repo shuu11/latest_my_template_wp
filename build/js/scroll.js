@@ -1,0 +1,1 @@
+"use strict";function hoge(o){console.log(o)}
