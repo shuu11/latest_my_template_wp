@@ -12,7 +12,7 @@ const del = require("del");
 const browserSync = require("browser-sync");
 const autoprefixer = require("autoprefixer");
 const loadPlugins = require("gulp-load-plugins");
-const $ = loadPlugins(); //  postcss,purgecss,imagemin,plumber,sass,sass-glob,connect-php,notify,rename,clean-css,uglify
+const $ = loadPlugins(); //  postcss,purgecss,imagemin,plumber,sass,sass-glob,connect-php,notify,rename,clean-css,uglify,changed,diff-build
 
 const paths = {
 	build: "./build",
@@ -34,6 +34,7 @@ const copy = {
 	src: [
 		"./**",
 		"!" + paths.build + "/**",
+		"!./.gulp/**",
 		"!./node_modules/**",
 		"!./scss/**",
 		"!./.gitignore",
@@ -46,7 +47,7 @@ const copy = {
 
 //  minify
 const minify = {
-  content: ["./*.php", "./includes/*.php", "./js/**/*.js"],
+	content: ["./*.php", "./includes/*.php", "./js/**/*.js"],
 
 	css: {
 		src: "./css/styles.css",
@@ -79,9 +80,8 @@ const minify = {
 	},
 };
 
-
 //  watch
-const watchSrc = ["./**", "!" + paths.build + "/**", "!./css/**"];
+const watchSrc = ["./**", "!" + paths.build + "/**", "!./gulp/**", "!./css/**"];
 
 //  build
 const build = {
@@ -122,6 +122,7 @@ gulp.task("copy", function (done) {
 gulp.task("minify", function (done) {
 	gulp
 		.src(minify.css.src)
+		.pipe($.changed(minify.css.dest))
 		.pipe($.plumber())
 		.pipe($.purgecss({ content: minify.content }))
 		.pipe($.cleanCss())
@@ -129,6 +130,7 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.fontawesome.src)
+		.pipe($.changed(minify.fontawesome.dest))
 		.pipe($.plumber())
 		.pipe($.purgecss({ content: minify.content }))
 		.pipe($.cleanCss())
@@ -136,6 +138,7 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.swiper.src)
+		.pipe($.changed(minify.swiper.dest))
 		.pipe($.plumber())
 		.pipe($.purgecss({ content: minify.content }))
 		.pipe($.cleanCss())
@@ -143,6 +146,7 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.tailwind.src)
+		.pipe($.changed(minify.tailwind.dest))
 		.pipe($.plumber())
 		.pipe(
 			$.purgecss({
@@ -153,9 +157,18 @@ gulp.task("minify", function (done) {
 		.pipe($.cleanCss())
 		.pipe(gulp.dest(minify.tailwind.dest));
 
-	gulp.src(minify.js.src).pipe($.plumber()).pipe($.uglify()).pipe(gulp.dest(minify.js.dest));
+	gulp
+		.src(minify.js.src)
+		.pipe($.changed(minify.js.dest))
+		.pipe($.plumber())
+		.pipe($.uglify())
+		.pipe(gulp.dest(minify.js.dest));
 
-	gulp.src(minify.image.src).pipe($.imagemin()).pipe(gulp.dest(minify.image.dest));
+	gulp
+		.src(minify.image.src)
+		.pipe($.changed(minify.image.dest))
+		.pipe($.imagemin())
+		.pipe(gulp.dest(minify.image.dest));
 	done();
 });
 
@@ -163,6 +176,7 @@ gulp.task("minify", function (done) {
 gulp.task("build", function (done) {
 	gulp
 		.src(build.sass.src)
+		.pipe($.diffBuild())
 		.pipe($.plumber({ errorHandler: $.notify.onError("Error: <%= error.message %>") }))
 		.pipe($.sassGlob())
 		.pipe($.sass())
@@ -208,7 +222,7 @@ gulp.task("start", gulp.series("clean", "copy"));
 
 gulp.task("release", gulp.series("release"));
 
-gulp.task("dev:default", gulp.series(parallel("bsc", "build"), "bs-reload", "dev:watch"));
+gulp.task("dev:default", gulp.series(parallel("bs", "build"), "bs-reload", "dev:watch"));
 
 gulp.task("pro:default", gulp.series(parallel("build"), "minify"));
 
