@@ -122,7 +122,6 @@ gulp.task("copy", function (done) {
 gulp.task("minify", function (done) {
 	gulp
 		.src(minify.css.src)
-		.pipe($.changed(minify.css.dest))
 		.pipe($.plumber())
 		.pipe($.purgecss({ content: minify.content }))
 		.pipe($.cleanCss())
@@ -130,7 +129,6 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.fontawesome.src)
-		.pipe($.changed(minify.fontawesome.dest))
 		.pipe($.plumber())
 		.pipe($.purgecss({ content: minify.content }))
 		.pipe($.cleanCss())
@@ -138,7 +136,6 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.swiper.src)
-		.pipe($.changed(minify.swiper.dest))
 		.pipe($.plumber())
 		.pipe($.purgecss({ content: minify.content }))
 		.pipe($.cleanCss())
@@ -146,7 +143,6 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.tailwind.src)
-		.pipe($.changed(minify.tailwind.dest))
 		.pipe($.plumber())
 		.pipe(
 			$.purgecss({
@@ -159,7 +155,6 @@ gulp.task("minify", function (done) {
 
 	gulp
 		.src(minify.js.src)
-		.pipe($.changed(minify.js.dest))
 		.pipe($.plumber())
 		.pipe($.uglify())
 		.pipe(gulp.dest(minify.js.dest));
