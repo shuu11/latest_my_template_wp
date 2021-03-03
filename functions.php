@@ -122,6 +122,7 @@ function my_script() {
   wp_enqueue_style('font-roboto', "//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap", array());
   wp_enqueue_style('style', get_template_directory_uri() . '/css/styles.css', array(), '1.0.0');
   wp_enqueue_style('wp-style', get_template_directory_uri() . '/css/wp-style.css', array(), '1.0.0');
+  wp_enqueue_style('editor-style', get_template_directory_uri() . '/css/editor-style.css', array(), '1.0.0');
 
   wp_enqueue_script('scrollreveal', get_template_directory_uri() . '/vender/scrollreveal/js/scrollreveal.min.js', array(), '4.0.7', true);
   wp_enqueue_script('scrollreveal', get_template_directory_uri() . '/vender/swiper/js/swiper-bundle.min.js', array(), '6.0.4', true);
