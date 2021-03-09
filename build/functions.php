@@ -24,6 +24,18 @@ function editor_style() {
 }
 add_action( 'admin_init', 'editor_style' );
 
+add_action('init',function(){
+  register_post_type('item',[
+    'label' => '商品',
+    'public' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-store',
+    'supports' => ['thumbnail','title','editor'],
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+    'has_archive' => true,
+  ]);
+});
+
 //  ウィジェット有効
 // function widgets_init() {
 //   register_sidebar (

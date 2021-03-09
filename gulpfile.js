@@ -47,7 +47,7 @@ const copy = {
 
 //  minify
 const minify = {
-	content: ["./*.php", "./includes/*.php", "./js/**/*.js"],
+	content: ["./*.php", "./php/**/*.php", "./js/**/*.js"],
 
 	css: {
 		src: "./css/styles.css",
@@ -153,11 +153,7 @@ gulp.task("minify", function (done) {
 		.pipe($.cleanCss())
 		.pipe(gulp.dest(minify.tailwind.dest));
 
-	gulp
-		.src(minify.js.src)
-		.pipe($.plumber())
-		.pipe($.uglify())
-		.pipe(gulp.dest(minify.js.dest));
+	gulp.src(minify.js.src).pipe($.plumber()).pipe($.uglify()).pipe(gulp.dest(minify.js.dest));
 
 	gulp
 		.src(minify.image.src)
