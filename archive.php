@@ -11,7 +11,9 @@
 
 <body class="archive" <?php body_class(); ?>>
 
-  <?php wp_body_open(); ?>
+  <?php wp_body_open();  ?>
+
+
 
 </body>
 <!-- body end -->

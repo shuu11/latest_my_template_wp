@@ -23,9 +23,14 @@ add_action('init',function(){
     'public' => true,
     'menu_position' => 5,
     'menu_icon' => 'dashicons-store',
-    'supports' => ['thumbnail','title','editor'],
     'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
     'has_archive' => true,
     'show_in_rest' => true,
+  ]);
+
+  register_taxonomy( 'type', 'item', [
+    'label' => '商品の分類',
+    'hierarchical' => true,
+    'show_ui' => true,
   ]);
 });

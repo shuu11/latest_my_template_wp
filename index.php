@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-	<!-- head start -->
-	<head>
-		<?php get_header(); ?>
-	</head>
-	<!-- head end -->
+<!-- head start -->
 
-	<!-- body start -->
-	<body <?php body_class(); ?>>
+<head>
+  <?php get_header(); ?>
+</head>
+<!-- head end -->
 
-		<?php wp_body_open(); ?>
+<!-- body start -->
 
-	</body>
-	<!-- body end -->
+<body <?php body_class(); ?>>
+
+  <?php wp_body_open(); ?>
+
+
+</body>
+<!-- body end -->
 
 </html>
 

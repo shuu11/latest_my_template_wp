@@ -75,7 +75,7 @@ const minify = {
 	},
 
 	image: {
-		src: "./image/**/*.{png,jpg,JPG,gif,svg}",
+		src: "./image/**/*.{png,jpg,JPG,gif,svg,ico}",
 		dest: paths.build + "/image",
 	},
 };
@@ -187,7 +187,8 @@ gulp.task("bs", function (done) {
 	browserSync.init({
 		notify: false,
 		files: [bs.files],
-		proxy: `http://localhost:${bs.proxy}/`,
+		port: `${bs.proxy}`,
+		proxy: `localhost:${bs.proxy}`,
 		open: "external",
 	});
 	done();
